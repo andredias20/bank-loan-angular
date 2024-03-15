@@ -25,7 +25,27 @@ export class ClientService {
     );
   }
 
+  listById(id : number) : Observable<Client> {
+    return this.httpClient.get<Client>(`${this.API}/${id}`)
+  }
+
   save(record : Partial<Client>) {
+    if(record._id) {
+      return this.update(record);
+    }
+    return this.create(record);
+  }
+
+  private create(record : Partial<Client>){
     return this.httpClient.post<Client>(this.API, record);
   }
+
+  private update(record : Partial<Client>) {
+    return this.httpClient.put<Client>(`${this.API}/${record._id}`, record);
+  }
+
+  remove(id: number) {
+    return this.httpClient.delete(`${this.API}/${id}`);
+  }
+
 }

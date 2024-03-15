@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from "@angular/forms";
-import {ClientService} from "../services/client.service";
+import {ClientService} from "../../services/client.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Location} from "@angular/common";
+import {ActivatedRoute} from "@angular/router";
+import {Client} from "../../model/client";
 
 @Component({
   selector: 'app-client-form',
@@ -12,6 +14,7 @@ import {Location} from "@angular/common";
 export class ClientFormComponent implements OnInit {
 
   form = this.formBuilder.group({
+    _id: [0],
     name: [''],
     phone_number: ['']
   });
@@ -21,10 +24,14 @@ export class ClientFormComponent implements OnInit {
             , private service : ClientService
             , private _snackBar: MatSnackBar
             , private location: Location
-  ) {}
+            , private route: ActivatedRoute
+  ) {
+
+  }
 
   ngOnInit(): void {
-
+    const client : Client = this.route.snapshot.data['client']
+    this.form.setValue(client);
   }
 
   onSubmit() {
@@ -47,6 +54,5 @@ export class ClientFormComponent implements OnInit {
   onCancel() {
     this.location.back()
   }
-
 
 }
