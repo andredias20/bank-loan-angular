@@ -5,13 +5,13 @@
   <!-- Name Column -->
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef>Full Name</mat-header-cell>
-    <mat-cell  *matCellDef="let client">{{ client.name }}</mat-cell>
+    <mat-cell *matCellDef="let client">{{ client.name }}</mat-cell>
   </ng-container>
 
   <!-- Column Column -->
   <ng-container matColumnDef="phone_number">
     <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let client">
+    <mat-cell *matCellDef="let client">
       {{ client.phone_number }}
     </mat-cell>
   </ng-container>

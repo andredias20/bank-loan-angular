@@ -1,16 +1,16 @@
 <mat-card>
-  <mat-toolbar color="primary"> Client </mat-toolbar>
+  <mat-toolbar color="primary"> Loan </mat-toolbar>
 
   <div class="column-flex mat-elevation-z8">
 
-    <app-client-list
-      *ngIf="clients$ | async as clients; else loading"
-      [clients]="clients"
+    <app-loan-list
+      *ngIf="loans$ | async as loans; else loading"
+      [loans]="loans"
       (add)="onAdd()"
       (edit)="onEdit($event)"
       (delete)="onDelete($event)">
 
-    </app-client-list>
+    </app-loan-list>
 
     <ng-template #loading>
       <div class="loading-spinner">

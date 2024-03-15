@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ClientRoutingModule } from './client-routing.module';
-import { ClientComponent } from './container/client/client.component';
 import { AppMaterialModule } from 'src/shared/app-material/app-material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { ClientComponent } from './container/client/client.component';
 import { ClientFormComponent } from './container/client-form/client-form.component';
-import { ReactiveFormsModule } from "@angular/forms";
 import { ClientListComponent } from './component/client-list/client-list.component';
 
 
@@ -14,8 +14,7 @@ import { ClientListComponent } from './component/client-list/client-list.compone
   imports: [
     CommonModule,
     AppMaterialModule,
-    ClientRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 })
 export class ClientModule {}

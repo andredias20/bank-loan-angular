@@ -1,0 +1,54 @@
+<mat-table [dataSource]="loans">
+  <!--- Note that these columns can be defined in any order.
+  The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Date Column -->
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef>Loan Date</mat-header-cell>
+    <mat-cell  *matCellDef="let loan">{{ loan.date }}</mat-cell>
+  </ng-container>
+
+  <!-- Currency Column -->
+  <ng-container matColumnDef="currency">
+    <mat-header-cell *matHeaderCellDef>Currency</mat-header-cell>
+    <mat-cell  *matCellDef="let loan"> {{ loan.currency }} </mat-cell>
+  </ng-container>
+
+  <!-- Total Value Column -->
+  <ng-container matColumnDef="total_value">
+    <mat-header-cell *matHeaderCellDef>Total Value</mat-header-cell>
+    <mat-cell  *matCellDef="let loan"> {{ loan.total_value }} </mat-cell>
+  </ng-container>
+
+  <!-- Conversion Tax. Column -->
+  <ng-container matColumnDef="conversion_tax">
+    <mat-header-cell *matHeaderCellDef>Conversion Tax.</mat-header-cell>
+    <mat-cell  *matCellDef="let loan"> {{ loan.conversion_tax }} </mat-cell>
+  </ng-container>
+
+  <!-- Loan Expire Date Column -->
+  <ng-container matColumnDef="loan_expire_date">
+    <mat-header-cell *matHeaderCellDef>Loan Expire Date</mat-header-cell>
+    <mat-cell  *matCellDef="let loan"> {{ loan.loan_expire_date }} </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef >
+      <button mat-mini-fab color="accent" aria-label="Adicionar um Cliente">
+        <mat-icon (click)="onAdd()" >add</mat-icon>
+      </button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let loan">
+      <button mat-icon-button color="primary" aria-label="Editar cliente">
+        <mat-icon (click)="onEdit(loan)" >edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" aria-label="Remover cliente">
+        <mat-icon (click)="onDelete(loan)" >delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
