@@ -47,7 +47,7 @@ export class LoanService {
 
   getCurrency() {
     return this.httpClient
-      .get('https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/Moedas?%24format=json')
+      .get<any>('https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/Moedas?%24format=json')
   }
 
 }

@@ -5,7 +5,6 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Location} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
 import {LoanService} from "../../services/loan.service";
-import {Currency} from "../../model/currency";
 
 @Component({
   selector: 'app-loan-form',
@@ -23,8 +22,6 @@ export class LoanFormComponent implements OnInit {
     loan_expire_date: [new Date()]
   });
 
-  currency: Currency[] | null = null;
-
   constructor(
     private formBuilder: NonNullableFormBuilder
     , private service : LoanService
@@ -36,7 +33,6 @@ export class LoanFormComponent implements OnInit {
   ngOnInit() {
     const loan : Loan = this.route.snapshot.data['loan']
     this.form.setValue(loan);
-    // if(loan._id != null) this.service.getCurrency().subscribe(resolve => resolve)
     //TODO: Pegar informações do bacen de currency e conversion_tax
   }
 

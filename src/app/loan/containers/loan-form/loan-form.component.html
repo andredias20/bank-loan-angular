@@ -4,26 +4,42 @@
   <mat-card-content>
     <form [formGroup]="form" >
 
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Choose a date" formControlName="date">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Currency" formControlName="currency">
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Currency</mat-label>
+        <select matNativeControl required>
+          <option value="BRL">Real</option>
+          <option value="USD">Dolar Americano</option>
+          <option value="EUR">Euro</option>
+          <option value="CAD">Dolar Canadense</option>
+        </select>
       </mat-form-field>
 
-      <mat-form-field class="full-width number">
+      <mat-form-field class="full-width number" appearance="fill">
         <mat-label>Amount</mat-label>
         <span matPrefix>$&nbsp;</span>
-        <input matInput type="number" class="example-left-align" placeholder="0" formControlName="total_value">
+        <input matInput type="number" class="example-left-align" formControlName="total_value">
       </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Conversion Tax" formControlName="conversion_tax">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Conversion Tax</mat-label>
+        <input matInput formControlName="conversion_tax">
       </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Loan Expire Date" formControlName="loan_expire_date">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="loan_expire_date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
     </form>

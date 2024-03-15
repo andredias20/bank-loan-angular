@@ -11,6 +11,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   exports: [
@@ -24,6 +25,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule,
     MatSnackBarModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatMenuModule
   ],
 })
