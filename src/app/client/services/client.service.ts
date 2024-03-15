@@ -24,4 +24,8 @@ export class ClientService {
       })
     );
   }
+
+  save(record : Partial<Client>) {
+    return this.httpClient.post<Client>(this.API, record);
+  }
 }

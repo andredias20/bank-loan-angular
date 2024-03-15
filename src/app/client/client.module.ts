@@ -4,13 +4,17 @@ import { CommonModule } from '@angular/common';
 import { ClientRoutingModule } from './client-routing.module';
 import { ClientComponent } from './client/client.component';
 import { AppMaterialModule } from 'src/shared/app-material/app-material.module';
+import { ClientFormComponent } from './client-form/client-form.component';
+import { ReactiveFormsModule } from "@angular/forms";
+
 
 @NgModule({
-  declarations: [ClientComponent],
+  declarations: [ClientComponent, ClientFormComponent],
   imports: [
     CommonModule,
+    AppMaterialModule,
     ClientRoutingModule,
-    AppMaterialModule
+    ReactiveFormsModule
   ],
 })
 export class ClientModule {}
