@@ -19,15 +19,15 @@
   <!-- Actions Column -->
   <ng-container matColumnDef="actions">
     <mat-header-cell *matHeaderCellDef >
-      <button mat-mini-fab color="accent" aria-label="Adicionar um Cliente">
+      <button mat-mini-fab color="accent" aria-label="Add client">
         <mat-icon (click)="onAdd()" >add</mat-icon>
       </button>
     </mat-header-cell>
     <mat-cell *matCellDef="let client">
-      <button mat-icon-button color="primary" aria-label="Editar cliente">
+      <button mat-icon-button color="primary" aria-label="Edit Client">
         <mat-icon (click)="onEdit(client)" >edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn" aria-label="Remover cliente">
+      <button mat-icon-button color="warn" aria-label="Remove client">
         <mat-icon (click)="onDelete(client)" >delete</mat-icon>
       </button>
     </mat-cell>

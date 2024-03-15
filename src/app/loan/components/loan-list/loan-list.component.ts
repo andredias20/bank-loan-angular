@@ -17,7 +17,8 @@ export class LoanListComponent implements OnInit {
     'currency',
     'total_value',
     'conversion_tax',
-    'loan_expire_date'
+    'loan_expire_date',
+    'actions'
   ];
 
   constructor() {}

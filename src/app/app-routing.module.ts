@@ -9,7 +9,7 @@ import { LoanComponent } from './loan/containers/loan/loan.component';
 const routes: Routes = [
 
   { path: 'loan', component: LoanComponent },
-  { path: 'loan/add', component: LoanFormComponent },
+  { path: 'loan/new', component: LoanFormComponent },
   { path: 'loan/edit/:id', component: LoanFormComponent },
 
   { path: 'client', component: ClientComponent },

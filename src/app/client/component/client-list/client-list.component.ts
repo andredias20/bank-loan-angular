@@ -1,7 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Client} from "../../model/client";
-import {ClientService} from "../../services/client.service";
-import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-client-list',
