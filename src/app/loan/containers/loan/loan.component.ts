@@ -2,7 +2,7 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {Loan} from "../../model/Loan";
+import {Loan} from "../../model/loan";
 import {LoanService} from "../../services/loan.service";
 
 @Component({
@@ -13,14 +13,6 @@ import {LoanService} from "../../services/loan.service";
 export class LoanComponent implements OnInit {
 
   loans$: Observable<Loan[]> | null = null
-
-  readonly displayedColumns = [
-    'date',
-    'currency',
-    'total_value',
-    'conversion_tax',
-    'loan_expire_date'
-  ];
 
   constructor(
                 private loanService: LoanService
@@ -41,8 +33,8 @@ export class LoanComponent implements OnInit {
     this.router.navigate(['new'], {relativeTo: this.route});
   }
 
-  onEdit(Loan: Loan) {
-    this.router.navigate(['edit', Loan._id], {relativeTo: this.route});
+  onEdit(loan: Loan) {
+    this.router.navigate(['edit', loan._id], {relativeTo: this.route});
   }
 
   onDelete(Loan : Loan) {

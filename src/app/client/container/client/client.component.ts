@@ -4,7 +4,6 @@ import { ClientService } from '../../services/client.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {Loan} from "../../../loan/model/Loan";
 
 @Component({
   selector: 'app-client',
@@ -36,8 +35,8 @@ export class ClientComponent implements OnInit {
     this.router.navigate(['new'], {relativeTo: this.route});
   }
 
-  onEdit(loan: Loan) {
-    this.router.navigate(['edit', loan._id], {relativeTo: this.route});
+  onEdit(client: Client) {
+    this.router.navigate(['edit', client._id], {relativeTo: this.route});
   }
 
   onDelete(client : Client) {

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { LoanResolver } from './loan.resolver';
 
-describe('ClientResolver', () => {
+describe('LoanResolver', () => {
   let resolver: LoanResolver;
 
   beforeEach(() => {

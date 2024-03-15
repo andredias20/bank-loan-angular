@@ -5,12 +5,13 @@ import { ClientComponent } from './client/container/client/client.component';
 import { ClientFormComponent } from './client/container/client-form/client-form.component';
 import { ClientResolver } from './client/guards/client.resolver';
 import { LoanComponent } from './loan/containers/loan/loan.component';
+import {LoanResolver} from "./loan/guards/loan.resolver";
 
 const routes: Routes = [
 
   { path: 'loan', component: LoanComponent },
-  { path: 'loan/new', component: LoanFormComponent },
-  { path: 'loan/edit/:id', component: LoanFormComponent },
+  { path: 'loan/new', component: LoanFormComponent, resolve: { loan: LoanResolver }},
+  { path: 'loan/edit/:id', component: LoanFormComponent, resolve: { loan: LoanResolver }},
 
   { path: 'client', component: ClientComponent },
   { path: 'client/new', component: ClientFormComponent, resolve: { client: ClientResolver }},

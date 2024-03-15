@@ -1,4 +1,21 @@
 <mat-toolbar color="primary">
-  <span>BankingApp</span>
+  <span class="fill-remaining-space">
+    <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuTrigger.closeMenu()">
+      <button mat-menu-item  routerLink="/client">
+            <mat-icon>people_outline</mat-icon>
+            <span>Client</span>
+      </button>
+      <button mat-menu-item routerLink="/loan">
+            <mat-icon>home</mat-icon>
+            <span>Loan</span>
+      </button>
+  </span>
+  </mat-menu>
+  </span>
+  <span class="fill-remaining-space">Banking App</span>
 </mat-toolbar>
 <router-outlet></router-outlet>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Loan } from '../../model/Loan';
+import { Loan } from '../../model/loan';
 
 @Component({
   selector: 'app-loan-list',

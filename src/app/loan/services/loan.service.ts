@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
-import {Loan} from "../model/Loan";
+import {Loan} from "../model/loan";
 
 @Injectable({
   providedIn: 'root'
@@ -44,4 +44,10 @@ export class LoanService {
   remove(id: number) {
     return this.httpClient.delete(`${this.API}/${id}`);
   }
+
+  getCurrency() {
+    return this.httpClient
+      .get('https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/Moedas?%24format=json')
+  }
+
 }

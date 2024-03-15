@@ -1,3 +1,36 @@
-<p>
-  loan-form works!
-</p>
+<mat-card>
+  <mat-toolbar> Create Loan </mat-toolbar>
+
+  <mat-card-content>
+    <form [formGroup]="form" >
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Choose a date" formControlName="date">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Currency" formControlName="currency">
+      </mat-form-field>
+
+      <mat-form-field class="full-width number">
+        <mat-label>Amount</mat-label>
+        <span matPrefix>$&nbsp;</span>
+        <input matInput type="number" class="example-left-align" placeholder="0" formControlName="total_value">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Conversion Tax" formControlName="conversion_tax">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Loan Expire Date" formControlName="loan_expire_date">
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Confirm</button>
+    <button mat-button (click)="onCancel()" >Cancel</button>
+  </mat-card-actions>
+</mat-card>
+
